@@ -12,7 +12,17 @@ public class Monster {
 		this.ap = ap;
 		this.dp = dp;
 	}
+	public void doBattle(int uAtk) {
+		this.hp = (this.hp + this.dp) - uAtk;
+		if(this.hp <= 0) {
+			System.out.println(name + "몬스터는  죽었습니다.");
+		}
+	}
 
+	public String getName() {
+		return name;
+	}
+	
 	public int getHp() {
 		return hp;
 	}
@@ -24,21 +34,8 @@ public class Monster {
 	public int getAp() {
 		return ap;
 	}
-
-	public void setAp(int ap) {
-		this.ap = ap;
-	}
-
 	public int getDp() {
 		return dp;
 	}
 
-	public void setDp(int dp) {
-		this.dp = dp;
-	}
-	
-	public void showMonster() {
-		System.out.println("공격력 :" + ap);
-		System.out.println("방어력 :" + dp);
-	}
 }
